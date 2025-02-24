@@ -1,0 +1,69 @@
+{% load i18n %}
+
+{% block subject %}
+  {% blocktrans %}{{ site_name }} - Your Account Has Been Successfully Created and Activated!{% endblocktrans %}
+{% endblock subject %}
+
+{% block text_body %}
+  {% trans "Your account has been created and is ready to use!" %}
+
+  {% trans "Thanks for using our site!" %}
+
+  {% blocktrans %}The {{ site_name }} team{% endblocktrans %}
+{% endblock text_body %}
+
+{% block html_body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    .email-container {
+      background-color: #ffffff;
+      margin: 40px auto;
+      padding: 20px;
+      max-width: 600px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #ff6600;
+      text-align: center;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 12px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <h1>{% blocktrans %}Welcome to {{ site_name }}!{% endblocktrans %}</h1>
+
+    <p>{% trans "Your account has been created and is ready to use!" %}</p>
+
+    <p>{% trans "Thanks for using our site!" %}</p>
+
+    <p>{% blocktrans %}The {{ site_name }} Team{% endblocktrans %}</p>
+
+    <div class="footer">
+      <p>{% blocktrans %}If you have any questions, feel free to reach out.{% endblocktrans %}</p>
+    </div>
+  </div>
+</body>
+</html>
+{% endblock html_body %}
